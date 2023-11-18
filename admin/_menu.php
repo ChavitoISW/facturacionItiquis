@@ -18,7 +18,13 @@ function menu($_opc, $_titulo) {
                                             <li><a href="mod_inscripcion.php">Modificar Inscripción</a></li>
                                         </ul>
                                     </li>-->
-                                    <li><a href="cierre2.php">Cierre de Caja</a></li>
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Cierre Cajas <span class="caret"></span></a>
+                                        <ul class="dropdown-menu" role="menu">                                        
+                                          <li><a href="cierre2.php">Cierre de Caja Detallado</a></li>
+                                          <li><a href="cierre.php">Cierre de Caja Consolidado</a></li>
+                                        </ul>
+                                    </li>	
                                     <li><a href="../anular.php">Anular Venta</a></li>
                                     <li><a href="../reimprime.php" target="_blank">Reimprimir Comprobante</a></li>
                                     <li class="dropdown">

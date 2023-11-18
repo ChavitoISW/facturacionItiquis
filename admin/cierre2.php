@@ -187,7 +187,7 @@ if (isset($_GET['export'])) {
                                     <button type="button" onclick="window.print();" class="btn btn-primary"><i class="fa fa-print"></i> Imprimir</button>
                                 </div>
                                 <div class="pull-left">
-                                    <button type="button" onclick="location.href = 'cierre.php?export=1';" class="btn btn-success"><i class="fa fa-file-excel-o"></i> Exportar</button>
+                                    <button type="button" onclick="location.href = 'cierre2.php?export=1';" class="btn btn-success"><i class="fa fa-file-excel-o"></i> Exportar</button>
                                 </div>									
                             </div>                                 
                         </div>						
