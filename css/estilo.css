@@ -206,6 +206,12 @@ button:hover {
 	padding-top:5px;
 }
 
+.dynamic{
+    padding: 1%;
+    border:  5px solid;
+    margin-bottom: 2%;
+}
+
 .datosUsuario{
     position: relative;
 	float:left;
