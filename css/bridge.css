@@ -1,0 +1,18 @@
+/* Bootstrap */
+@import url("bootstrap.min.css");
+
+/* Icons */
+@import url("font-awesome.min.css");
+@import url("ionicons.min.css");
+
+/* Stylesheet */
+@import url("daterangepicker.css");
+@import url("datepicker3.css");
+@import url("bootstrap-timepicker.min.css");
+@import url("dataTables.bootstrap.css");
+@import url("AdminLTE.min.css");
+@import url("skins/_all-skins.min.css");
+@import url("estilo.css");
+@import url("sweetalert.css");
+@import url("alertify.css");
+@import url("themes/bootstrap.css");
