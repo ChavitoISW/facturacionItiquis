@@ -52,58 +52,50 @@ $comoPago = $tipoPago == 2 ? "Sinpe": "Efectivo";
         <style type="text/css" media="print">
             .nover {display:none}
         </style>
-
     </head>
     <body>
 
         <div class="wrapper">
             <section class="content-header">
-                <br>
                 <ol class="breadcrumb">
                     <li><a href="#"><img src="imagenes/miniescudo.png"> <?= _Titulo() ?></a></li>
                     <li class="active"><?= _Evento() ?></li>
                 </ol>
             </section> 
-            <hr>			
-            <br>
+            <hr>
+
             <section class="content">  
                 <form name="formulario" id="formulario" method="post" action="pago.php">
                     <center>
-                        <div class="row">  
-                            <img src="imagenes/logo.png" class="img-rounded" alt="logo">	
+                        <div class="row">
                             <div class="box box-info"> 												
-                                <div class="box-header with-border"><h3 >Parroquia Sagrado Coraz&oacute;n de Jesus <br/>Diaconia Itiquis, Alajuela, Costa Rica </h3></div>
+                                <div class="box-header with-border"><h4 >Parroquia Sagrado Coraz&oacute;n de Jesus <br/>Diaconia Itiquis, Alajuela, Costa Rica </h4></div>
                                 <div class="form-group">
-                                <div ><h5><strong>Direcci&oacute;n:</strong> Del puente de Itiquis, 700 metros este </h5></div>
-                                <div ><h5><strong>Correo electr&oacute;nico:</strong> ticda.digital@gmail.com </h5></div>
+                               <!-- <div ><h5><strong>Direcci&oacute;n:</strong> Del puente de Itiquis, 700 metros este </h5></div>-->
+                                <!--<div ><h5><strong>Correo electr&oacute;nico:</strong> ticda.digital@gmail.com </h5></div>-->
                                 <div ><h5><strong>Fecha:</strong> <?= $fecha?></h5></div>
-                                <div><h5 ><strong>Consecutivo: </strong><?= $consecutivo?></h5></div>
-                                <div><h5 ><strong>Cliente: </strong>Estimado Cliente</h5></div>
-                                <div><h5 ><strong>Sinpe Movil: </strong>6486-1927</h5></div>
+                                    <div><h5><strong>Consecutivo: </strong></h5><h3><?= $consecutivo?></h3></div>
+                               <!-- <div><h5 ><strong>Cliente: </strong>Estimado Cliente</h5></div>-->
+                                <div><h5 ><strong>Sinpe Movil: </strong>8353-9062</h5></div>
                             </div>
-                                <div class="box-body" align="center">
-
-                                    <hr>
-                                    <div class="form-group">
-                                        <label class="col-sm-4 control-label" for="monto">Detalle de Compra:</label>
-                                    </div> 
-                                    <br><br>
-                                    <table id="example" class="table table-bordered table-striped" border="2">
+                                <hr/>
+                                <div class="table1" id="table1" >
+                                    <table id="table" class="table table-bordered table-striped" border="2">
                                         <thead>
-                                        <tr>
-                                            <th>Cant.</th>
-                                            <th>Producto</th>
-                                            <th>Precio Unitario</th>
-                                            <th>Total <br/> Linea</th>
+                                        <tr align="center">
+                                            <th style="text-align: center">Cant.</th>
+                                            <th style="text-align: center">Producto</th>
+                                           <!-- <th>Precio <br/> Unitario</th>-->
+                                            <th style="text-align: center">Total Linea</th>
                                         </tr>
                                         </thead>
                                         <tbody>
                                         <?php for ($x = 0; $x < count($detalle); $x++) {
                                             if ($detalle[$x] != '') {  ?>
                                             <tr class="gradeA" align="center">
-                                                <td align="center"><h4><?= $detalle[$x]['cantidad'] ?></h4></a></td>
+                                                <td><h4><?= $detalle[$x]['cantidad'] ?></h4></a></td>
                                                 <td><h4><?= $detalle[$x]['nombre'] ?></h4></td>
-                                                <td><h5>&cent;<?= _FORMATO($detalle[$x]['monto']) ?></h5> </td>
+                                                <!--<td><h5>&cent;<?= _FORMATO($detalle[$x]['monto']) ?></h5> </td>-->
                                                 <td><h5>&cent;<?= _FORMATO($detalle[$x]['totalLinea']) ?></h5> </td>
                                             </tr>
                                         <?php } } ?>
@@ -115,16 +107,10 @@ $comoPago = $tipoPago == 2 ? "Sinpe": "Efectivo";
                                         <div class="col-sm-12"> <h4>Monto total de compra:&nbsp; <strong>&cent;&nbsp;<?= _FORMATO($monto) ?></strong></h4> </div>
                                             <h4>Medio de Pago: <strong><?= $tipoPago == 1 ? "Efectivo": "Sinpe"?></strong> </h4>
                                     </div>
-                                    <hr>
+                                    <hr/>
                                 </div>
 
                                 <div class="box-footer">
-                                    <div>¡Oh amabilísima Virgen de Lourdes, Madre de Dios y Madre nuestra!
-                                        Llenos de aflicción y con lágrimas fluyendo de los ojos,
-                                        acudimos en las horas amargas de la enfermedad a tu maternal corazón,
-                                        para pedirte que derrames a manos llenas
-                                        el tesoro de tu misericordia sobre nosotros!</div>
-                                    <hr>
                                     <div class="pull-right nover">
                                         <button type="button" onclick="window.print()" class="btn btn-primary"><i class="fa fa-print"></i> Imprimir</button>
                                     </div>

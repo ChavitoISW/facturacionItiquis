@@ -44,10 +44,10 @@ if (isset($_GET['ORDER'])) {
         <hr>
         <br>
         <section class="content">
-            <form name="formulario" id="formulario" method="post" action="confirmaAnular.php">
+            <form name="formulario" id="formulario" method="post" action="imprimeAgain.php">
                 <center>
                     <div class="box box-info">
-                        <h2>Anular Ordenes</h2>
+                        <h2>Reimprimir Ordenes</h2>
                         <div class="box-header with-border"><h3 class="box-title">Dato Requerido</h3></div>
                         <div class="box-body">
                             <table style="width:100%" cellpadding="2" cellspacing ="2">
