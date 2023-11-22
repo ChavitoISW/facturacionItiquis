@@ -14,7 +14,7 @@ if( isset($_GET['export']) ){
 }
 $fechas = $_POST['fecha'];
 //$fechas = str_replace('-',"' and '" , $fechas);
-error_log($fechas);
+
 
 $inicio = strpos($fechas, ' -');
 

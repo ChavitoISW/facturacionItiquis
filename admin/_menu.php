@@ -26,7 +26,7 @@ function menu($_opc, $_titulo) {
                                         </ul>
                                     </li>	
                                     <li><a href="../anular.php">Anular Venta</a></li>
-                                    <li><a href="../reimprime.php" target="_blank">Reimprimir Comprobante</a></li>
+                                    <li><a href="../reimprimir.php">Reimprimir</a></li>                                   
                                     <li class="dropdown">
                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Reportes <span class="caret"></span></a>
                                         <ul class="dropdown-menu" role="menu">

@@ -72,10 +72,10 @@ $fecha = date('Y/m/d');
                                     <table id="example" class="table table-bordered table-striped" border="2">
                                         <thead>
                                         <tr>
-                                            <th>Cant.</th>
-                                            <th>Producto</th>
-                                            <th>Precio Unitario</th>
-                                            <th>Total <br/> Linea</th>
+                                            <th style="text-align: center">Cant.</th>
+                                            <th style="text-align: center">Producto</th>
+                                            <th style="text-align: center">Precio Unitario</th>
+                                            <th style="text-align: center">Total Linea</th>
                                         </tr>
                                         </thead>
                                         <tbody>
