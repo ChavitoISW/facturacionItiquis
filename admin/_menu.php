@@ -23,6 +23,7 @@ function menu($_opc, $_titulo) {
                                         <ul class="dropdown-menu" role="menu">                                        
                                           <li><a href="cierre2.php">Cierre de Caja Detallado</a></li>
                                           <li><a href="cierre.php">Cierre de Caja Consolidado</a></li>
+                                          <li><a href="cierre3.php">Cierre de Totales</a></li>
                                         </ul>
                                     </li>	
                                     <li><a href="../anular.php">Anular Venta</a></li>

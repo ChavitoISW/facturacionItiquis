@@ -11,6 +11,8 @@ $consecutivo = $_POST['consecutivo'];
 $numeric = is_numeric($unidades);
 $res = "";
 
+
+
 $Z = _QUERY("SELECT  monto FROM tablamontos WHERE id = $id;");
 
 if($numeric == false and $accion == "agregar"){
@@ -21,7 +23,8 @@ if($numeric == false and $accion == "agregar"){
     $res = '-1';
 } else if ($accion == "agregar") {
         $total += ($Z[0]['monto'] * $unidades);
-        _TRANS("INSERT INTO pedido VALUES('$consecutivo', $id, $unidades, $total) ;");
+
+    _TRANS("INSERT INTO pedido VALUES('$consecutivo', $id, $unidades, $total) ;");
         $res = 1;
     } else {
         _TRANS("DELETE FROM pedido WHERE consecutivo = '$consecutivo' and idProducto = $id;");
