@@ -79,7 +79,7 @@ $fecha = date('d-M-Y');
                                             <input type="checkbox" id="ck<?= $Z[$z]['id'] ?>" name="ck[]"
                                                    value="<?= $Z[$z]['id'] ?>"
                                                    onclick="Selecciona('<?= $Z[$z]['id'] ?>', '<?= $Z[$z]['nombre'] ?>', '<?= $consecutivo ?>', this);">
-                                            <span onclick="Agrega('<?= $Z[$z]['id'] ?>', '<?= $Z[$z]['nombre'] ?>', '<?= $Z[$z]['monto'] ?>');"><strong><i
+                                            <span onclick="Agrega('<?= $Z[$z]['id'] ?>', '<?= $Z[$z]['nombre'] ?>', '<?= $consecutivo ?>');"><strong><i
                                                             class="fa fa-book margin-r-5"></i> Producto: </strong><?= $Z[$z]['nombre'] ?></span><br>
                                             <?= $espacios ?><strong><i class="fa fa-file-text-o margin-r-5"></i> Precio:
                                             </strong>&cent;<?= _FORMATO($Z[$z]['monto']) ?> CRC<small
@@ -101,7 +101,7 @@ $fecha = date('d-M-Y');
                                                 <input type="checkbox" id="ck<?= $Z[$z]['id'] ?>" name="ck[]"
                                                        value="<?= $Z[$z]['id'] ?>"
                                                        onclick="Selecciona('<?= $Z[$z]['id'] ?>', '<?= $Z[$z]['nombre'] ?>', '<?= $consecutivo ?>', this);">
-                                                <span onclick="Agrega('<?= $Z[$z]['id'] ?>', '<?= $Z[$z]['nombre'] ?>',  '<?= $Z[$z]['monto'] ?>');"><strong><i
+                                                <span onclick="Agrega('<?= $Z[$z]['id'] ?>', '<?= $Z[$z]['nombre'] ?>',  '<?= $consecutivo ?>');"><strong><i
                                                                 class="fa fa-book margin-r-5"></i> Producto: </strong><?= $Z[$z]['nombre'] ?></span><br>
                                                 <?= $espacios ?><strong><i class="fa fa-file-text-o margin-r-5"></i>
                                                     Precio: </strong>&cent;<?= _FORMATO($Z[$z]['monto']) ?> CRC<small

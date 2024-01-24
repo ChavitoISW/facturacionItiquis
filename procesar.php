@@ -56,10 +56,10 @@ $comoPago = $tipoPago == 2 ? "Sinpe": "Efectivo";
     <body>
 
         <div class="wrapper">
-            <section class="content-header">
-                <ol class="breadcrumb">
+            <section class="content-header nover">
+                <ol class="breadcrumb nover">
                     <li><a href="#"><img src="imagenes/miniescudo.png"> <?= _Titulo() ?></a></li>
-                    <li class="active"><?= _Evento() ?></li>
+                    <li class="active nover"><?= _Evento() ?></li>
                 </ol>
             </section> 
             <hr>
@@ -68,15 +68,18 @@ $comoPago = $tipoPago == 2 ? "Sinpe": "Efectivo";
                 <form name="formulario" id="formulario" method="post" action="pago.php">
                     <center>
                         <div class="row">
-                            <div class="box box-info"> 												
-                                <div class="box-header with-border"><h4 >Parroquia Sagrado Coraz&oacute;n de Jesus <br/>Diaconia Itiquis, Alajuela, Costa Rica </h4></div>
+                            <div class="box box-info">
+                                <div class="box-header with-border"><h5 >Parroquia Sagrado Coraz&oacute;n de Jesus <br/>Diaconia Nuestra señora de Lourdes </h5></div>
                                 <div class="form-group">
                                <!-- <div ><h5><strong>Direcci&oacute;n:</strong> Del puente de Itiquis, 700 metros este </h5></div>-->
                                 <!--<div ><h5><strong>Correo electr&oacute;nico:</strong> ticda.digital@gmail.com </h5></div>-->
                                 <div ><h5><strong>Fecha:</strong> <?= $fecha?></h5></div>
+                                    <div><h5 ><strong>Sinpe Movil: </strong>8353-9062</h5></div>
+                                    <hr/>
                                     <div><h5><strong>Consecutivo: </strong></h5><h3><?= $consecutivo?></h3></div>
+                                    <hr/>
                                <!-- <div><h5 ><strong>Cliente: </strong>Estimado Cliente</h5></div>-->
-                                <div><h5 ><strong>Sinpe Movil: </strong>8353-9062</h5></div>
+
                             </div>
                                 <hr/>
                                 <div class="table1" id="table1" >

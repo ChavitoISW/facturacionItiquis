@@ -63,16 +63,16 @@ if (isset($_GET['export'])) {
 
                 <center>
                     <div class="row">  
-                        <img src="../imagenes/logo.png" class="img-rounded" alt="logo">	
+                     
                         <div class="box box-info"> 												
-                            <div class="box-header with-border"><h3 class="box-title">Cierre de Caja del <?= date('d/m/Y') ?></h3></div>
+                            <div class="box-header with-border"><h3 class="box-title">Cierre de Caja de final</h3></div>
                             <div class="box-body">
 
                                 <?php
                                 $ro = _QUERY("SELECT DISTINCT tp.nombre as nombre FROM encabezadopedido ep 
                                     inner join pedido p on ep.consecutivo = p.consecutivo inner join tablamontos tm on p.idProducto = tm.id
                                     inner join tablaprogramaciones tp on tm.programacion = tp.id
-                                    WHERE usuario = '0-0000-0000' AND (fecha BETWEEN '{$fecha}' AND '{$fecha} 23:59:00') AND ep.estado = '1';");
+                                    WHERE usuario = '0-0000-0000' AND (fecha BETWEEN '2023-11-24' AND '2023-12-03 23:59:00') AND ep.estado = '1';");
 
 
                                 for ($y = 0; $y < count($ro); $y++) {
@@ -87,27 +87,27 @@ if (isset($_GET['export'])) {
                                     <div class="dynamic" id="dynamic">
                                     <h2>Caja de <?= $progra ?></h2>
                                 <h3>EFECTIVO</h3>
-                                <table style="width:100%" cellpadding="2" cellspacing ="2" >
+                             <!--   <table style="width:100%" cellpadding="2" cellspacing ="2" >
                                     <tr>
                                         <th><b>No. Comprobante</b></th>
                                         <th><b>Fecha</b></th>
                                         <th><b>Nombre</b></th>
                                         <th><b>Monto</b></th>
-                                    </tr>
+                                    </tr>-->
                                     <?php
                                    $ROW = _QUERY(" SELECT (ep.consecutivo), DATE_FORMAT(ep.fecha, '%d/%m/%Y %T') AS fecha, p.totalLinea as monto, tp.nombre as programacion, tm.nombre as nombre FROM encabezadopedido ep inner join pedido p on ep.consecutivo = p.consecutivo inner join tablamontos tm on p.idProducto = tm.id inner join tablaprogramaciones tp on tm.programacion = tp.id
-                                     WHERE usuario = '0-0000-0000' AND (fecha BETWEEN '{$fecha}' AND '{$fecha} 23:59:00') AND ep.estado = '1' AND tipoPago = 1 and tp.nombre like '%$progra%';");
+                                     WHERE usuario = '0-0000-0000' AND (fecha BETWEEN '2023-11-24' AND '2023-12-03 23:59:00') AND ep.estado = '1' AND tipoPago = 1 and tp.nombre like '%$progra%';");
                                    
                                     for ($x = 0; $x < count($ROW); $x++) {
                                         $totalEfectivo += $ROW[$x]['monto'];
 
                                         ?>
-                                        <tr onMouseOut='mOut(this)' onMouseOver='mOver(this)'>
+                                      <!--  <tr onMouseOut='mOut(this)' onMouseOver='mOver(this)'>
                                             <td><?= $ROW[$x]['consecutivo'] ?></td>
                                             <td><?= $ROW[$x]['fecha'] ?></td>
                                             <td><?= $ROW[$x]['nombre'] ?></td>
                                             <td>&cent;<?= _FORMATO($ROW[$x]['monto']) ?> </td>
-                                        </tr>
+                                        </tr>-->
                                     <?php }  $totalGeneralEfectivo += $totalEfectivo ?>
                                     <tr><td colspan="8"><hr></td></tr>
                                     <tr><td colspan="7" align="right"><b>Total Efectivo <?= $progra ?>:</b>&nbsp;</td><td>&cent;<?= _FORMATO($totalEfectivo) ?> </td></tr>
@@ -117,27 +117,27 @@ if (isset($_GET['export'])) {
                                         <br/>
 
                                         <h3>SINPE</h3>
-                                        <tr>
+                                     <!--   <tr>
                                             <th><b>No. Comprobante</b></th>
                                             <th><b>Fecha</b></th>
                                             <th><b>Nombre</b></th>
                                             <th><b>Monto</b></th>
-                                        </tr>
+                                        </tr>-->
                                         <?php
 
                                         $ROWE = _QUERY(" SELECT (ep.consecutivo), DATE_FORMAT(ep.fecha, '%d/%m/%Y %T') AS fecha, p.totalLinea as monto, tp.nombre as programacion, tm.nombre as nombre FROM encabezadopedido ep inner join pedido p on ep.consecutivo = p.consecutivo inner join tablamontos tm on p.idProducto = tm.id inner join tablaprogramaciones tp on tm.programacion = tp.id 
-                                        WHERE usuario = '0-0000-0000' AND (fecha BETWEEN '{$fecha}' AND '{$fecha} 23:59:00') AND ep.estado = '1' AND tipoPago = 2 and tp.nombre like '%$progra%';");
+                                        WHERE usuario = '0-0000-0000' AND (fecha BETWEEN '2023-11-24' AND '2023-12-03 23:59:00') AND ep.estado = '1' AND tipoPago = 2 and tp.nombre like '%$progra%';");
 
 
                                         for ($x = 0; $x < count($ROWE); $x++) {
                                             $totalSimpe += $ROWE[$x]['monto'];
                                             ?>
-                                            <tr onMouseOut='mOut(this)' onMouseOver='mOver(this)'>
+                                          <!--  <tr onMouseOut='mOut(this)' onMouseOver='mOver(this)'>
                                                 <td><?= $ROWE[$x]['consecutivo'] ?></td>
                                                 <td><?= $ROWE[$x]['fecha'] ?></td>
                                                 <td><?= $ROWE[$x]['nombre'] ?></td>
                                                 <td>&cent;<?= _FORMATO($ROWE[$x]['monto']) ?></td>
-                                            </tr>
+                                            </tr>-->
                                         <?php } $totalGeneralSimpe += $totalSimpe;?>
                                     <tr><td colspan="8"><hr></td></tr>
                                     <tr><td colspan="7" align="right"><b>Total Sinpe <?= $progra ?>:</b>&nbsp;</td><td>&cent;<?= _FORMATO($totalSimpe) ?></td></tr>
@@ -147,7 +147,7 @@ if (isset($_GET['export'])) {
                                     <br/>
 
                                     <h3>Tiqutes Anulados</h3>
-                                    <tr>
+                                 <!--   <tr>
                                         <th><b>No. Comprobante</b></th>
                                         <th><b>Fecha</b></th>
                                         <th><b>Nombre</b></th>
@@ -166,7 +166,7 @@ if (isset($_GET['export'])) {
                                             <td><?= $ROWN[$x]['nombre'] ?></td>
                                             <td>&cent;<?= _FORMATO($ROWN[$x]['monto']) ?></td>
                                         </tr>
-                                    <?php }  $totalGeneralNulos += $totalNulos;?>
+                                    <?php }  $totalGeneralNulos += $totalNulos;?>-->
                                     <tr><td colspan="8"><hr></td></tr>
                                     <tr style="color: red"><td colspan="7" align="right"><b>Total Anulados <?= $progra ?>:</b>&nbsp;</td><td>&cent;<?= _FORMATO($totalNulos) ?></td></tr>
                                 </table>

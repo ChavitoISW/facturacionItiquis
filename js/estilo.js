@@ -42,6 +42,7 @@ function Selecciona(id, nombre, consecutivo, check) {
 }
 
 function Agrega(id, nombre, consecutivo) {
+
     if (document.getElementById("ck" + id).checked == true) {
         alertify.error('Eliminó el producto "' + nombre + '"');
         document.getElementById("ck" + id).checked = false;
@@ -164,9 +165,11 @@ function AgregaLista(id, accion, consecutivo)
                     document.getElementById("ck" + id).checked = false;
                     break;
                 case '1':
+
                     var parametrosAdentro = {
                         "_AJAX": 1,
                         "consecutivo": consecutivo,
+
                     };
                     $.ajax({
                         data: parametrosAdentro,
